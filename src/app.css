@@ -1,0 +1,48 @@
+/* font faces */
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("/inter-var-latin.woff2") format("woff2");
+}
+
+:root {
+  color-scheme: light dark;
+
+  --font-inter: "Inter", sans-serif;
+
+  --light-bg: #f2f2f2;
+  --light-color: #09090b;
+
+  --dark-bg: #09090b;
+  --dark-color: #f2f2f2;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  background-color: light-dark(var(--light-bg), var(--dark-bg));
+  color: light-dark(var(--light-color), var(--dark-color));
+  font-family: var(--font-inter);
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#app {
+  width: 100%;
+  height: 100%;
+}
